@@ -19,7 +19,7 @@ class Modal extends React.Component {
       <div className={this.props.showModal ? 'modal modal--open' : 'modal'}>
         <div className="modal__conteudo">
           <button onClick={this.closeModal} className="fechar" />
-          Conteúdo do modal
+          {this.props.mensagem}
         </div>
       </div>
     )

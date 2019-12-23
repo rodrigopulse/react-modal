@@ -18,8 +18,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <button onClick={this.showModal}>Abrir Modal</button>
-        <Modal onClose={this.showModal} showModal={this.state.showModal}/>
+        <button className="abrir-modal" onClick={this.showModal}>Abrir Modal</button>
+        <Modal onClose={this.showModal} showModal={this.state.showModal} mensagem="Mensagem do Modal"/>
       </div>
     );
   }

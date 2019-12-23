@@ -7,14 +7,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'React'
+      showModal: false
     };
   }
-
+  showModal = e => {
+    this.setState({
+      showModal: !this.state.showModal
+    });
+  };
   render() {
     return (
       <div className="container">
-        <Modal />
+        <button onClick={this.showModal}>Abrir Modal</button>
+        <Modal onClose={this.showModal} showModal={this.state.showModal}/>
       </div>
     );
   }

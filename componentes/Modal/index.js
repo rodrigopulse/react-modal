@@ -6,12 +6,19 @@ import './Modal.scss';
 class Modal extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props)
+  }
+  state = {
+    showModal: false
+  }
+  closeModal = () => {
+    this.props.onClose && this.props.onClose();
   }
   render() {
     return (
-      <div className="modal">
+      <div className={this.props.showModal ? 'modal modal--open' : 'modal'}>
         <div className="modal__conteudo">
-          <button href="#" className="fechar" />
+          <button onClick={this.closeModal} className="fechar" />
           Conteúdo do modal
         </div>
       </div>
